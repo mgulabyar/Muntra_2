@@ -10,66 +10,72 @@
 
 <body class="bg-gray-50">
 
-<nav class="flex items-center justify-between bg-white shadow-md p-4 md:px-10 sticky top-0 z-[9999]">
-  <div class="flex items-center gap-x-3 cursor-pointer w-full sm:w-auto">
-    <img src="Myntra.png" alt="Myntra Icon" class="h-8 md:h-10">
+
+  <nav class="flex items-center justify-between bg-white/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.03)] p-3 md:py-0 md:px-10 sticky top-0 z-[9999] border-b border-gray-100 font-sans">
+  
+  <!-- Left Wing: Logo + Responsive Input + Menu -->
+  <div class="flex items-center gap-x-4 md:gap-x-8 lg:gap-x-12 w-full sm:w-auto">
+    <!-- Premium Logo wrapper -->
+    <div class="cursor-pointer transform hover:scale-105 transition-transform duration-200 shrink-0">
+      <img src="Myntra.png" alt="Myntra Icon" class="h-6 sm:h-8 md:h-10 object-contain py-1">
+    </div>
     
-    <div class="flex sm:hidden  items-center gap-x-2 border p-1 rounded-md flex-1">
-      <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#1f1f1f">
-        <path
-          d="M765-144 526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l239 239-51 51ZM384-408q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z" />
+    <!-- Mobile Search Bar (Saves space on small devices, sizes gracefully) -->
+    <div class="flex sm:hidden items-center gap-x-2 bg-[#f5f5f6] border border-transparent focus-within:border-gray-200 focus-within:bg-white px-2.5 py-1.5 rounded-md flex-1 max-w-[220px] transition-all duration-200">
+      <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#696e79">
+        <path d="M765-144 526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l239 239-51 51ZM384-408q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z" />
       </svg>
-      <input type="text" placeholder="Search" class="outline-none w-full text-sm" id="searchInputMobile">
+      <input type="text" placeholder="Search..." class="outline-none bg-transparent w-full text-xs font-light text-[#282c3f] placeholder-[#696e79]" id="searchInputMobile">
     </div>
 
-    <!-- Menu   -->
-    <div class="hidden md:flex gap-x-4 text-xs font-bold">
-      <span>MEN</span>
-      <span>WOMEN</span>
-      <span>KIDS</span>
-      <span>HOME</span>
-      <span>BEAUTY</span>
-      <span>GENZ</span>
-      <span>STUDIO<sup class="text-red-500 ml-1">NEW</sup></span>
+    <!-- Desktop Menu Links (Clean Premium Typography with Myntra Border Animation) -->
+    <div class="hidden md:flex gap-x-5 lg:gap-x-7 text-[12px] lg:text-[13px] font-bold tracking-wider text-[#282c3f] whitespace-nowrap">
+      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#ee366b] md:py-6 transition-all duration-150 uppercase">MEN</span>
+      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#f15e2e] md:py-6 transition-all duration-150 uppercase">WOMEN</span>
+      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#fb56c1] md:py-6 transition-all duration-150 uppercase">KIDS</span>
+      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#f2c21a] md:py-6 transition-all duration-150 uppercase">HOME</span>
+      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#0db7af] md:py-6 transition-all duration-150 uppercase">BEAUTY</span>
+      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#ff3f6c] md:py-6 transition-all duration-150 uppercase">GENZ</span>
+      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#ff3f6c] md:py-6 transition-all duration-150 uppercase relative">
+        STUDIO<sup class="absolute top-2 -right-6 bg-[#ff3f6c] text-white text-[8px] font-black px-1 rounded scale-90 tracking-none">NEW</sup>
+      </span>
     </div>
   </div>
 
-  <!-- Search + Icons -->
-  <div class="flex items-center gap-x-4 font-semibold text-xs">
-    <!-- Search (Desktop) -->
-    <div class="hidden sm:flex items-center gap-x-2 border p-2 rounded-md">
-      <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1f1f1f">
-        <path
-          d="M765-144 526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l239 239-51 51ZM384-408q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z" />
+  <!-- Right Wing: Search (Desktop) + Navigation Icons -->
+  <div class="flex items-center gap-x-4 sm:gap-x-6 font-semibold text-[11px] text-[#282c3f] shrink-0">
+    
+    <!-- Search Bar (Desktop - Perfect alignment and sizing) -->
+    <div class="hidden sm:flex items-center gap-x-3 bg-[#f5f5f6] border border-transparent focus-within:border-gray-200 focus-within:bg-white px-4 py-2 rounded-md w-[200px] md:w-[280px] lg:w-[380px] transition-all duration-200">
+      <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#696e79">
+        <path d="M765-144 526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l239 239-51 51ZM384-408q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z" />
       </svg>
-      <input type="text" placeholder="Search for products, brands and more" class="outline-none w-full text-sm"
-        id="searchInput">
+      <input type="text" placeholder="Search for products, brands and more" class="outline-none bg-transparent w-full text-xs font-light text-[#282c3f] placeholder-[#696e79]" id="searchInput">
     </div>
 
+    <!-- Action Icon Buttons (Clean alignment with soft animations) -->
     <!-- Profile -->
-    <span class="flex flex-col items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1f1f1f">
-        <path
-          d="M397.41-480Q364-480 343-505.5T326-564l14-85q7-52 46.81-85.5T480-768q53.38 0 93.19 33Q613-702 620-650l14 86q4 33-17 58.5T562.59-480H397.41Zm-.41-72h166l-14-86q-4-26-23.37-42t-45.5-16q-26.13 0-45.63 16-19.5 16-23.5 42l-14 86Zm83 0ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Z" />
+    <span class="flex flex-col items-center cursor-pointer group py-1 border-b-2 border-transparent hover:border-[#ff3f6c] transition-all">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#282c3f" class="group-hover:fill-[#ff3f6c] transition-colors duration-150">
+        <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T226-378q62-31 126-46.5t128-15.5q64 0 128 15.5T734-378q31 15 48.5 43.5T800-272v32H160Z" />
       </svg>
-      <span class="hidden sm:block">Profile</span>
+      <span class="hidden sm:block text-[10px] font-bold mt-1 text-gray-700 group-hover:text-[#ff3f6c]">Profile</span>
     </span>
 
     <!-- Wishlist -->
-    <span class="flex flex-col items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mb-1" fill="none" viewBox="0 0 24 24"
-        stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
+    <span class="flex flex-col items-center cursor-pointer group py-1 border-b-2 border-transparent hover:border-[#ff3f6c] transition-all">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#282c3f] group-hover:text-[#ff3f6c] group-hover:scale-105 transition-all duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
       </svg>
-      <span class="hidden sm:block">Wishlist</span>
+      <span class="hidden sm:block text-[10px] font-bold mt-1 text-gray-700 group-hover:text-[#ff3f6c]">Wishlist</span>
     </span>
 
     <!-- Bag -->
-    <span class="flex flex-col items-center">
-      <img src="Screenshot 2025-06-26 093922.png" alt="Bag" class="h-5 w-5">
-      <span class="hidden sm:block">Bag</span>
+    <span class="flex flex-col items-center cursor-pointer group py-1 border-b-2 border-transparent hover:border-[#ff3f6c] transition-all relative">
+      <img src="Screenshot 2025-06-26 093922.png" alt="Bag" class="h-5 w-5 object-contain group-hover:scale-105 transition-transform duration-150">
+      <span class="hidden sm:block text-[10px] font-bold mt-1 text-gray-700 group-hover:text-[#ff3f6c]">Bag</span>
     </span>
+    
   </div>
 </nav>
 
