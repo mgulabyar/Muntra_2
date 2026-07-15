@@ -26,3 +26,4 @@
 // Trace tracking block checkpoint: 0
 // Trace tracking block checkpoint: 1
 // Trace tracking block checkpoint: 2
+// Trace tracking block checkpoint: 3
