@@ -1,152 +1,400 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Myntra Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Myntra Website</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-gray-50">
-
-
-  <nav class="flex items-center justify-between bg-white/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.03)] p-3 md:py-0 md:px-10 sticky top-0 z-[9999] border-b border-gray-100 font-sans">
-  
-  <!-- Left Wing: Logo + Responsive Input + Menu -->
-  <div class="flex items-center gap-x-4 md:gap-x-8 lg:gap-x-12 w-full sm:w-auto">
-    <!-- Premium Logo wrapper -->
-    <div class="cursor-pointer transform hover:scale-105 transition-transform duration-200 shrink-0">
-      <img src="Myntra.png" alt="Myntra Icon" class="h-6 sm:h-8 md:h-10 object-contain py-1">
-    </div>
-    
-    <!-- Mobile Search Bar (Saves space on small devices, sizes gracefully) -->
-    <div class="flex sm:hidden items-center gap-x-2 bg-[#f5f5f6] border border-transparent focus-within:border-gray-200 focus-within:bg-white px-2.5 py-1.5 rounded-md flex-1 max-w-[220px] transition-all duration-200">
-      <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#696e79">
-        <path d="M765-144 526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l239 239-51 51ZM384-408q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z" />
-      </svg>
-      <input type="text" placeholder="Search..." class="outline-none bg-transparent w-full text-xs font-light text-[#282c3f] placeholder-[#696e79]" id="searchInputMobile">
-    </div>
-
-    <!-- Desktop Menu Links (Clean Premium Typography with Myntra Border Animation) -->
-    <div class="hidden md:flex gap-x-5 lg:gap-x-7 text-[12px] lg:text-[13px] font-bold tracking-wider text-[#282c3f] whitespace-nowrap">
-      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#ee366b] md:py-6 transition-all duration-150 uppercase">MEN</span>
-      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#f15e2e] md:py-6 transition-all duration-150 uppercase">WOMEN</span>
-      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#fb56c1] md:py-6 transition-all duration-150 uppercase">KIDS</span>
-      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#f2c21a] md:py-6 transition-all duration-150 uppercase">HOME</span>
-      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#0db7af] md:py-6 transition-all duration-150 uppercase">BEAUTY</span>
-      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#ff3f6c] md:py-6 transition-all duration-150 uppercase">GENZ</span>
-      <span class="cursor-pointer border-b-4 border-transparent hover:border-[#ff3f6c] md:py-6 transition-all duration-150 uppercase relative">
-        STUDIO<sup class="absolute top-2 -right-6 bg-[#ff3f6c] text-white text-[8px] font-black px-1 rounded scale-90 tracking-none">NEW</sup>
-      </span>
-    </div>
-  </div>
-
-  <!-- Right Wing: Search (Desktop) + Navigation Icons -->
-  <div class="flex items-center gap-x-4 sm:gap-x-6 font-semibold text-[11px] text-[#282c3f] shrink-0">
-    
-    <!-- Search Bar (Desktop - Perfect alignment and sizing) -->
-    <div class="hidden sm:flex items-center gap-x-3 bg-[#f5f5f6] border border-transparent focus-within:border-gray-200 focus-within:bg-white px-4 py-2 rounded-md w-[200px] md:w-[280px] lg:w-[380px] transition-all duration-200">
-      <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#696e79">
-        <path d="M765-144 526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l239 239-51 51ZM384-408q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z" />
-      </svg>
-      <input type="text" placeholder="Search for products, brands and more" class="outline-none bg-transparent w-full text-xs font-light text-[#282c3f] placeholder-[#696e79]" id="searchInput">
-    </div>
-
-    <!-- Action Icon    soft animations) -->
-    <span class="flex flex-col items-center cursor-pointer group py-1 border-b-2 border-transparent hover:border-[#ff3f6c] transition-all">
-      <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#282c3f" class="group-hover:fill-[#ff3f6c] transition-colors duration-150">
-        <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T226-378q62-31 126-46.5t128-15.5q64 0 128 15.5T734-378q31 15 48.5 43.5T800-272v32H160Z" />
-      </svg>
-      <span class="hidden sm:block text-[10px] font-bold mt-1 text-gray-700 group-hover:text-[#ff3f6c]">Profile</span>
-    </span>
-
-    <span class="flex flex-col items-center cursor-pointer group py-1 border-b-2 border-transparent hover:border-[#ff3f6c] transition-all">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#282c3f] group-hover:text-[#ff3f6c] group-hover:scale-105 transition-all duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-      </svg>
-      <span class="hidden sm:block text-[10px] font-bold mt-1 text-gray-700 group-hover:text-[#ff3f6c]">Wishlist</span>
-    </span>
-
-    <span class="flex flex-col items-center cursor-pointer group py-1 border-b-2 border-transparent hover:border-[#ff3f6c] transition-all relative">
-      <img src="Screenshot 2025-06-26 093922.png" alt="Bag" class="h-5 w-5 object-contain group-hover:scale-105 transition-transform duration-150">
-      <span class="hidden sm:block text-[10px] font-bold mt-1 text-gray-700 group-hover:text-[#ff3f6c]">Bag</span>
-    </span>
-    
-  </div>
-</nav>
-
-  
-
-  <div class="flex flex-col pt-4 px-4 text-sm">
-    <span>Home / Clothing / <span class="font-bold">Men T-Shirt</span></span>
-    <div class="pt-2"><span class="font-bold">Men T-Shirts </span><span>- 225,890 items</span></div>
-  </div>
-
-  <!-- Filters + Sort -->
-  <div class="flex flex-col md:flex-row justify-between pt-5 px-4 border-b pb-3 text-gray-600 gap-y-3">
-    <!-- Filters -->
-    <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm items-center">
-      <span class="font-bold">FILTERS</span>
-      <span class="text-xs text-red-500 font-bold cursor-pointer">CLEAR ALL</span>
-      <select class="hover:bg-gray-100 p-1 rounded-full">
-        <option value="bundles">Bundles</option>
-      </select>
-      <select class="hover:bg-gray-100 p-1 rounded-full">
-        <option value="Country of Origin">Country of Origin</option>
-      </select>
-      <select class="hover:bg-gray-100 p-1 rounded-full">
-        <option value="Size">Size</option>
-      </select>
-    </div>
-
-    <!-- Sort -->
-    <div class="relative inline-block text-left group">
-      <button
-        class="inline-flex justify-between w-48 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded">
-        Sort by: <span class="font-bold ml-1">Recommended</span>
-        <svg class="w-4 h-4 ml-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
+  <body class="bg-gray-50">
+    <nav
+      class="flex items-center justify-between bg-white/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.03)] p-3 md:py-0 md:px-10 sticky top-0 z-[9999] border-b border-gray-100 font-sans"
+    >
       <div
-        class="absolute left-0 z-10 mt-1 w-full bg-white border border-gray-200 rounded shadow-md opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity">
-        <ul class="text-sm text-gray-700">
-          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Recommended</li>
-          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">What's New</li>
-          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Popularity</li>
-          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Better Discount</li>
-          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Price: High to Low</li>
-          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Price: Low to High</li>
-          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Customer Rating</li>
-        </ul>
+        class="flex items-center gap-x-4 md:gap-x-8 lg:gap-x-12 w-full sm:w-auto"
+      >
+        <div
+          class="cursor-pointer transform hover:scale-105 transition-transform duration-200 shrink-0"
+        >
+          <img
+            src="Myntra.png"
+            alt="Myntra Icon"
+            class="h-6 sm:h-8 md:h-10 object-contain py-1"
+          />
+        </div>
+
+        <div
+          class="flex sm:hidden items-center gap-x-2 bg-[#f5f5f6] border border-transparent focus-within:border-gray-200 focus-within:bg-white px-2.5 py-1.5 rounded-md flex-1 max-w-[220px] transition-all duration-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="16px"
+            viewBox="0 -960 960 960"
+            width="16px"
+            fill="#696e79"
+          >
+            <path
+              d="M765-144 526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l239 239-51 51ZM384-408q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z"
+            />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search..."
+            class="outline-none bg-transparent w-full text-xs font-light text-[#282c3f] placeholder-[#696e79]"
+            id="searchInputMobile"
+          />
+        </div>
+
+        <div
+          class="hidden md:flex gap-x-5 lg:gap-x-7 text-[12px] lg:text-[13px] font-semibold tracking-wider text-[#282c3f] whitespace-nowrap"
+        >
+          <span
+            class="cursor-pointer border-b-2 border-transparent hover:border-[#ee366b] md:py-4 transition-all duration-150 uppercase"
+            >MEN</span
+          >
+          <span
+            class="cursor-pointer border-b-2 border-transparent hover:border-[#f15e2e] md:py-4 transition-all duration-150 uppercase"
+            >WOMEN</span
+          >
+          <span
+            class="cursor-pointer border-b-2 border-transparent hover:border-[#fb56c1] md:py-4 transition-all duration-150 uppercase"
+            >KIDS</span
+          >
+          <span
+            class="cursor-pointer border-b-2 border-transparent hover:border-[#f2c21a] md:py-4 transition-all duration-150 uppercase"
+            >HOME</span
+          >
+          <span
+            class="cursor-pointer border-b-2 border-transparent hover:border-[#0db7af] md:py-4 transition-all duration-150 uppercase"
+            >BEAUTY</span
+          >
+          <span
+            class="cursor-pointer border-b-2 border-transparent hover:border-[#ff3f6c] md:py-4 transition-all duration-150 uppercase"
+            >GENZ</span
+          >
+          <span
+            class="cursor-pointer border-b-2 border-transparent hover:border-[#ff3f6c] md:py-4 transition-all duration-150 uppercase relative"
+          >
+            STUDIO<sup
+              class="absolute top-2 -right-6 bg-[#ff3f6c] text-white text-[8px] font-black px-1 rounded scale-90 tracking-none"
+              >NEW</sup
+            >
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center gap-x-4 sm:gap-x-6 font-semibold text-[11px] text-[#282c3f] shrink-0"
+      >
+        <div
+          class="hidden sm:flex items-center gap-x-3 bg-[#f5f5f6] border border-transparent focus-within:border-gray-200 focus-within:bg-white px-4 py-2 rounded-md w-[200px] md:w-[280px] lg:w-[380px] transition-all duration-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="18px"
+            viewBox="0 -960 960 960"
+            width="18px"
+            fill="#696e79"
+          >
+            <path
+              d="M765-144 526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l239 239-51 51ZM384-408q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z"
+            />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search for products, brands and more"
+            class="outline-none bg-transparent w-full text-xs font-light text-[#282c3f] placeholder-[#696e79]"
+            id="searchInput"
+          />
+        </div>
+
+        <span
+          class="flex flex-col items-center cursor-pointer group py-1 border-b-2 border-transparent hover:border-[#ff3f6c] transition-all"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="20px"
+            viewBox="0 -960 960 960"
+            width="20px"
+            fill="#282c3f"
+            class="group-hover:fill-[#ff3f6c] transition-colors duration-150"
+          >
+            <path
+              d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T226-378q62-31 126-46.5t128-15.5q64 0 128 15.5T734-378q31 15 48.5 43.5T800-272v32H160Z"
+            />
+          </svg>
+          <span
+            class="hidden sm:block text-[10px] font-bold mt-1 text-gray-700 group-hover:text-[#ff3f6c]"
+            >Profile</span
+          >
+        </span>
+
+        <span
+          class="flex flex-col items-center cursor-pointer group py-1 border-b-2 border-transparent hover:border-[#ff3f6c] transition-all"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 text-[#282c3f] group-hover:text-[#ff3f6c] group-hover:scale-105 transition-all duration-150"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z"
+            />
+          </svg>
+          <span
+            class="hidden sm:block text-[10px] font-bold mt-1 text-gray-700 group-hover:text-[#ff3f6c]"
+            >Wishlist</span
+          >
+        </span>
+
+        <span
+          class="flex flex-col items-center cursor-pointer group py-1 border-b-2 border-transparent hover:border-[#ff3f6c] transition-all relative"
+        >
+          <img
+            src="Screenshot 2025-06-26 093922.png"
+            alt="Bag"
+            class="h-5 w-5 object-contain group-hover:scale-105 transition-transform duration-150"
+          />
+          <span
+            class="hidden sm:block text-[10px] font-bold mt-1 text-gray-700 group-hover:text-[#ff3f6c]"
+            >Bag</span
+          >
+        </span>
+      </div>
+    </nav>
+
+    <div
+      class="flex flex-col pt-5 px-4 md:px-10 text-[12px] sm:text-xs font-sans text-[#282c3f]"
+    >
+      <div class="tracking-wide text-gray-500 font-light space-x-1">
+        <span
+          class="hover:text-[#ff3f6c] cursor-pointer transition-colors duration-150"
+          >Home</span
+        >
+        <span class="text-gray-400">/</span>
+        <span
+          class="hover:text-[#ff3f6c] cursor-pointer transition-colors duration-150"
+          >Clothing</span
+        >
+        <span class="text-gray-400">/</span>
+        <span class="font-semibold text-[#282c3f]">Men T-Shirt</span>
+      </div>
+
+      <div
+        class="pt-3 flex items-baseline gap-x-2 border-b border-gray-100 pb-4"
+      >
+        <h1
+          class="font-bold text-base sm:text-md text-[#282c3f] tracking-tight uppercase"
+        >
+          Men T-Shirts
+        </h1>
+        <span
+          class="text-xs sm:text-sm text-gray-400 font-light tracking-wide before:content-['-'] before:mr-2"
+        >
+          225,890 items
+        </span>
       </div>
     </div>
-  </div>
 
-  <!-- Main Content -->
-  <div class="flex flex-col md:flex-row">
-    <!-- Sidebar -->
-    <div class="flex flex-col p-4 bg-white gap-3 w-full md:w-72 border-b md:border-r">
-      <h2 class="font-bold text-gray-600 mb-3">Men Categories</h2>
-      <button id="showAllBtn" class="text-left text-sm hover:bg-gray-100 p-2 px-4">All</button>
-      <button id="showShirtsBtn" class="text-left text-sm hover:bg-gray-100 p-2 px-4">Shirts</button>
-      <button id="showTShirtsBtn" class="text-left text-sm hover:bg-gray-100 p-2 px-4">TShirts</button>
-      <button id="showJeansBtn" class="text-left text-sm hover:bg-gray-100 p-2 px-4">Jeans</button>
-      <button id="showPerfumeBtn" class="text-left text-sm hover:bg-gray-100 p-2 px-4">Perfume</button>
-      <button id="showShoesBtn" class="text-left text-sm hover:bg-gray-100 p-2 px-4">Sports Shoes</button>
-      <button id="showKurtasBtn" class="text-left text-sm hover:bg-gray-100 p-2 px-4">Kurtas</button>
+    <div
+      class="flex flex-col md:flex-row justify-between items-start md:items-center pt-6 px-4 md:px-10 border-b border-gray-100 pb-4 text-[#282c3f] gap-y-4 font-sans"
+    >
+      <div
+        class="flex flex-wrap gap-x-6 gap-y-3 text-[13px] items-center w-full md:w-auto"
+      >
+        <span class="font-bold tracking-wider text-[#282c3f] text-sm"
+          >FILTERS</span
+        >
+        <span
+          class="text-[11px] text-[#ff3f6c] font-bold cursor-pointer tracking-wide hover:text-[#ee366b] transition-colors duration-150"
+          >CLEAR ALL</span
+        >
 
-      <h2 class="font-bold text-gray-600 my-4 border-t py-3">Women Categories</h2>
-      <button id="womenKurtasBtn" class="text-left text-sm hover:bg-gray-100 py-2 px-4">Kurtas</button>
+        <div
+          class="relative cursor-pointer group py-1 text-gray-600 hover:text-[#282c3f] flex items-center gap-x-1 font-medium transition-colors"
+        >
+          <span>Bundles</span>
+          <svg
+            class="w-3 h-3 text-gray-400 group-hover:text-[#282c3f]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+
+        <div
+          class="relative cursor-pointer group py-1 text-gray-600 hover:text-[#282c3f] flex items-center gap-x-1 font-medium transition-colors"
+        >
+          <span>Country of Origin</span>
+          <svg
+            class="w-3 h-3 text-gray-400 group-hover:text-[#282c3f]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+
+        <div
+          class="relative cursor-pointer group py-1 text-gray-600 hover:text-[#282c3f] flex items-center gap-x-1 font-medium transition-colors"
+        >
+          <span>Size</span>
+          <svg
+            class="w-3 h-3 text-gray-400 group-hover:text-[#282c3f]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div
+        class="relative inline-block text-left group w-full sm:w-auto self-end md:self-auto"
+      >
+        <button
+          class="inline-flex justify-between items-center w-full sm:w-64 px-4 py-2.5 text-[13px] font-normal text-[#282c3f] bg-white border border-gray-200 rounded hover:border-gray-300 transition-colors duration-200"
+        >
+          <span
+            >Sort by:
+            <span class="font-bold ml-1 text-[#282c3f]">Recommended</span></span
+          >
+          <svg
+            class="w-3.5 h-3.5 ml-2 text-gray-500 transform group-hover:rotate-180 transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <div
+          class="absolute right-0 z-20 mt-1 w-full sm:w-64 bg-white border border-gray-100 rounded shadow-[0_4px_25px_rgba(0,0,0,0.08)] opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 transform origin-top scale-95 group-hover:scale-100 py-1.5"
+        >
+          <ul class="text-[13px] text-gray-600 font-light">
+            <li
+              class="px-4 py-2 hover:bg-gray-50 hover:text-[#ff3f6c] hover:font-medium cursor-pointer transition-colors"
+            >
+              Recommended
+            </li>
+            <li
+              class="px-4 py-2 hover:bg-gray-50 hover:text-[#ff3f6c] hover:font-medium cursor-pointer transition-colors"
+            >
+              What's New
+            </li>
+            <li
+              class="px-4 py-2 hover:bg-gray-50 hover:text-[#ff3f6c] hover:font-medium cursor-pointer transition-colors"
+            >
+              Popularity
+            </li>
+            <li
+              class="px-4 py-2 hover:bg-gray-50 hover:text-[#ff3f6c] hover:font-medium cursor-pointer transition-colors"
+            >
+              Better Discount
+            </li>
+            <li
+              class="px-4 py-2 hover:bg-gray-50 hover:text-[#ff3f6c] hover:font-medium cursor-pointer transition-colors"
+            >
+              Price: High to Low
+            </li>
+            <li
+              class="px-4 py-2 hover:bg-gray-50 hover:text-[#ff3f6c] hover:text-[#ff3f6c] hover:font-medium cursor-pointer transition-colors"
+            >
+              Price: Low to High
+            </li>
+            <li
+              class="px-4 py-2 hover:bg-gray-50 hover:text-[#ff3f6c] hover:font-medium cursor-pointer transition-colors"
+            >
+              Customer Rating
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <!-- Product Grid -->
-    <div class="w-full p-4">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="shirtProductGrid"></div>
+<div class="flex flex-col md:flex-row bg-white min-h-screen font-sans border-t border-gray-100">
+  
+  <aside class="flex flex-col p-5 bg-white w-full md:w-64 lg:w-72 shrink-0 border-b md:border-b-0 md:border-r border-gray-100 md:sticky md:top-[70px] md:h-[calc(100vh-70px)] overflow-y-auto transition-all duration-200">
+    
+    <h2 class="font-bold text-xs tracking-wider text-[#282c3f] uppercase mb-4 mt-2 px-1">
+      Men Categories
+    </h2>
+    
+    <div class="flex flex-col gap-y-1">
+      <button id="showAllBtn" class="text-left text-[13px] text-gray-600 font-medium hover:text-[#ff3f6c] hover:bg-gray-50/80 p-2.5 px-4 rounded-lg transition-all duration-150 focus:outline-none">
+        All
+      </button>
+      <button id="showShirtsBtn" class="text-left text-[13px] text-gray-600 font-medium hover:text-[#ff3f6c] hover:bg-gray-50/80 p-2.5 px-4 rounded-lg transition-all duration-150 focus:outline-none">
+        Shirts
+      </button>
+      <button id="showTShirtsBtn" class="text-left text-[13px] text-gray-600 font-medium hover:text-[#ff3f6c] hover:bg-gray-50/80 p-2.5 px-4 rounded-lg transition-all duration-150 focus:outline-none">
+        TShirts
+      </button>
+      <button id="showJeansBtn" class="text-left text-[13px] text-gray-600 font-medium hover:text-[#ff3f6c] hover:bg-gray-50/80 p-2.5 px-4 rounded-lg transition-all duration-150 focus:outline-none">
+        Jeans
+      </button>
+      <button id="showPerfumeBtn" class="text-left text-[13px] text-gray-600 font-medium hover:text-[#ff3f6c] hover:bg-gray-50/80 p-2.5 px-4 rounded-lg transition-all duration-150 focus:outline-none">
+        Perfume
+      </button>
+      <button id="showShoesBtn" class="text-left text-[13px] text-gray-600 font-medium hover:text-[#ff3f6c] hover:bg-gray-50/80 p-2.5 px-4 rounded-lg transition-all duration-150 focus:outline-none">
+        Sports Shoes
+      </button>
+      <button id="showKurtasBtn" class="text-left text-[13px] text-gray-600 font-medium hover:text-[#ff3f6c] hover:bg-gray-50/80 p-2.5 px-4 rounded-lg transition-all duration-150 focus:outline-none">
+        Kurtas
+      </button>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <h2 class="font-bold text-xs tracking-wider text-[#282c3f] uppercase mt-6 mb-4 border-t border-gray-100 pt-5 px-1">
+      Women Categories
+    </h2>
+    
+    <div class="flex flex-col gap-y-1">
+      <button id="womenKurtasBtn" class="text-left text-[13px] text-gray-600 font-medium hover:text-[#ff3f6c] hover:bg-gray-50/80 p-2.5 px-4 rounded-lg transition-all duration-150 focus:outline-none">
+        Kurtas
+      </button>
+    </div>
+    
+  </aside>
+
+  <main class="w-full p-4 sm:p-6 lg:p-8 bg-gray-50/30">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8" id="shirtProductGrid">
+    </div>
+  </main>
+  
+</div>
+
+
+    <script src="script.js"></script>
+  </body>
 </html>

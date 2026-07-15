@@ -825,19 +825,61 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProducts(filteredProducts);
   });
 
-  function renderProducts(data) {
+  // function renderProducts(data) {
+  //   grid.innerHTML = data
+  //     .map(
+  //       (item) => `
+  //     <div class="bg-white p-3 shadow rounded">
+  //       <img src="${item.src}" class="w-full h-48 object-cover object-top mb-2" alt="${item.name}">
+  //       <div class="font-semibold text-gray-800">${item.name}</div>
+  //       <div class="text-sm text-gray-500">${item.cata}</div>
+  //       <div class="text-sm mt-1 flex items-center gap-2">
+  //         <span class="line-through text-red-400">${item.oldPrice}</span>
+  //         <span class="font-bold text-black">${item.price}</span>
+  //         <span class="text-green-600">${item.OFF}</span>
+  //       </div>
+  //     </div>
+  //   `
+  //     )
+  //     .join("");
+  // }
+
+function renderProducts(data) {
     grid.innerHTML = data
       .map(
         (item) => `
-      <div class="bg-white p-3 shadow rounded">
-        <img src="${item.src}" class="w-full h-48 object-cover object-top mb-2" alt="${item.name}">
-        <div class="font-semibold text-gray-800">${item.name}</div>
-        <div class="text-sm text-gray-500">${item.cata}</div>
-        <div class="text-sm mt-1 flex items-center gap-2">
-          <span class="line-through text-red-400">${item.oldPrice}</span>
-          <span class="font-bold text-black">${item.price}</span>
-          <span class="text-green-600">${item.OFF}</span>
+      <div class="bg-white rounded-none border border-transparent hover:border-gray-100 hover:shadow-[0_4px_15px_rgba(0,0,0,0.06)] transition-all duration-300 group cursor-pointer flex flex-col relative overflow-hidden h-full">
+        
+        <div class="w-full aspect-[3/4] overflow-hidden bg-gray-50 relative shrink-0">
+          <img src="${item.src}" class="w-full h-full object-cover object-top transform group-hover:scale-[1.03] transition-transform duration-500 ease-out" alt="${item.name}">
+          
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[90%] bg-white/95 backdrop-blur-sm text-center py-2 text-[12px] font-bold tracking-wide text-[#282c3f] rounded border border-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-sm flex items-center justify-center gap-1.5 hover:bg-[#ff3f6c] hover:text-white hover:border-[#ff3f6c]">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z"/></svg>
+            WISHLIST
+          </div>
         </div>
+        
+        <!-- Premium Metadata Details Footer Box -->
+        <div class="p-3.5 flex flex-col justify-between flex-grow font-sans bg-white z-10">
+          <div>
+            <!-- Brand / Product Headline -->
+            <h4 class="font-bold text-[14px] text-[#282c3f] tracking-tight truncate uppercase mb-0.5 group-hover:text-[#ff3f6c] transition-colors">
+              ${item.name}
+            </h4>
+            <!-- Category Subtext Description -->
+            <p class="text-[12px] text-gray-500 font-light truncate tracking-wide max-w-full mb-2">
+              ${item.cata}
+            </p>
+          </div>
+          
+          <!-- Pricing Structure Framework Row -->
+          <div class="text-[13px] flex items-baseline gap-x-2 whitespace-nowrap mt-auto pt-1">
+            <span class="font-bold text-[#282c3f]">${item.price}</span>
+            <span class="line-through text-gray-400 text-[11px] font-light">${item.oldPrice}</span>
+            <span class="text-[#ff905a] text-[11px] font-semibold tracking-tight">${item.OFF}</span>
+          </div>
+        </div>
+
       </div>
     `
       )
