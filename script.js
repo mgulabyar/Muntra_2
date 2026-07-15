@@ -47,3 +47,4 @@
 // Trace tracking block checkpoint: 21
 // Trace tracking block checkpoint: 22
 // Trace tracking block checkpoint: 23
+// Trace tracking block checkpoint: 24
