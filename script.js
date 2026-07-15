@@ -24,3 +24,4 @@
 // Trace tracking iteration checkpoint vector index: 23
 // Trace tracking iteration checkpoint vector index: 24
 // Trace tracking block checkpoint: 0
+// Trace tracking block checkpoint: 1
